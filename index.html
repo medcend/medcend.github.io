@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>MEDCEND｜海外医学部生の進級支援</title>
+<meta name="description" content="海外の英語医学部にいる日本人の「入った後」を支えるチーム MEDCEND。落ちやすい科目（解剖・生化学・生理学）を、日本語で分かって英語で言えるところまで。無料の進級相談（30分・1対1）受付中。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="MEDCEND｜入学させる会社ではなく、卒業させる会社。">
+<meta property="og:description" content="海外医学部にいる日本人の「入った後」を支える在学生チーム。無料の進級相談（30分・1対1）と、10月の体験授業。">
+<meta property="og:image" content="og.png">
+<meta property="og:locale" content="ja_JP">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@medcend">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22%3E%3Crect width=%22100%22 height=%22100%22 fill=%22%23132238%22/%3E%3Cpolyline points=%2222,82 22,34 50,62 78,34 78,82%22 fill=%22none%22 stroke=%22%23F3EEE4%22 stroke-width=%2212%22/%3E%3Crect x=%2272%22 y=%2216%22 width=%2212%22 height=%229%22 fill=%22%23D9744F%22/%3E%3C/svg%3E">
+<meta name="theme-color" content="#132238">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700;800&family=Zen+Kaku+Gothic+New:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&display=swap">
+<style>
+  :root{
+    --navy:#132238; --navy-2:#1B2F4B; --cream:#F3EEE4; --cream-2:#EAE3D6; --mist:#CFC6B5;
+    --ink:#1B2A41; --ink-soft:#4E5A6B; --terra:#D9744F; --terra-deep:#B85A38;
+    --on-navy:#F3EEE4; --on-navy-soft:rgba(243,238,228,.72);
+    --display:"Zen Kaku Gothic New","Noto Sans JP","Hiragino Sans",sans-serif;
+    --body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+    --latin:"Inter","Helvetica Neue",Arial,sans-serif;
+    --w:1040px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.9;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.35}
+  p{margin:0}
+  .wrap{max-width:var(--w);margin:0 auto;padding:0 24px}
+  .eyebrow{font-family:var(--latin);font-weight:700;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--terra)}
+  .num{font-family:var(--latin);font-variant-numeric:tabular-nums}
+  section{padding:88px 0}
+  @media (max-width:640px){section{padding:64px 0}}
+
+  /* nav */
+  .nav{position:sticky;top:0;z-index:10;background:var(--navy);color:var(--on-navy);border-bottom:1px solid rgba(243,238,228,.12)}
+  .nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+  .mark{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .mark svg{width:30px;height:30px}
+  .mark b{font-family:var(--latin);font-weight:800;letter-spacing:.14em;font-size:15px}
+  .nav-links{display:flex;gap:26px;font-size:14px;font-weight:500}
+  .nav-links a{text-decoration:none;color:var(--on-navy-soft)}
+  .nav-links a:hover{color:var(--on-navy)}
+  @media (max-width:760px){.nav-links{display:none}}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:4px;font-weight:700;text-decoration:none;font-size:15px;line-height:1;border:1.5px solid transparent;transition:background .15s,color .15s,border-color .15s}
+  .btn:focus-visible{outline:3px solid var(--terra);outline-offset:3px}
+  .btn-terra{background:var(--terra);color:#fff}
+  .btn-terra:hover{background:var(--terra-deep)}
+  .btn-ghost-light{border-color:rgba(243,238,228,.45);color:var(--on-navy)}
+  .btn-ghost-light:hover{border-color:var(--on-navy)}
+  .btn-ghost-dark{border-color:var(--navy);color:var(--navy)}
+  .btn-ghost-dark:hover{background:var(--navy);color:var(--on-navy)}
+  .btn-sm{padding:10px 16px;font-size:13px}
+
+  /* hero */
+  .hero{background:var(--navy);color:var(--on-navy);padding:96px 0 0}
+  .hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:end}
+  @media (max-width:860px){.hero-grid{grid-template-columns:1fr}}
+  .hero h1{font-size:clamp(26px,3.6vw,46px);font-weight:900;letter-spacing:.01em;line-height:1.3;margin-top:22px;text-wrap:initial}
+  .hero h1 span{display:inline-block;white-space:nowrap}
+  .hero .lead{font-size:17px;color:var(--on-navy-soft);margin-top:26px;max-width:36em}
+  .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:38px}
+  .stair{justify-self:end;width:100%;max-width:360px;opacity:.95}
+  @media (max-width:860px){.stair{display:none}}
+  .stats{margin-top:72px;border-top:1px solid rgba(243,238,228,.16);display:grid;grid-template-columns:repeat(3,1fr)}
+  @media (max-width:760px){.stats{grid-template-columns:1fr}}
+  .stat{padding:30px 28px 34px;border-right:1px solid rgba(243,238,228,.16)}
+  .stat:last-child{border-right:0}
+  @media (max-width:760px){.stat{border-right:0;border-bottom:1px solid rgba(243,238,228,.16)}.stat:last-child{border-bottom:0}}
+  .stat .v{font-family:var(--latin);font-weight:800;font-size:44px;letter-spacing:-.02em;line-height:1;font-variant-numeric:tabular-nums}
+  .stat .v small{font-size:20px;font-weight:700;margin-left:4px;letter-spacing:0}
+  .stat .l{font-weight:700;margin-top:12px;font-size:15px}
+  .stat .s{font-size:12px;color:var(--on-navy-soft);margin-top:6px;line-height:1.6}
+
+  /* generic section heads */
+  .sec-head{display:grid;grid-template-columns:1fr;gap:14px;max-width:38em;margin-bottom:44px}
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px);font-weight:700;letter-spacing:.01em}
+  .sec-head p{color:var(--ink-soft)}
+  .prose{max-width:38em}
+  .prose p+p{margin-top:1.2em}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+  @media (max-width:820px){.two{grid-template-columns:1fr;gap:36px}}
+
+  /* curriculum timeline */
+  .cur{background:var(--navy);color:var(--on-navy)}
+  .cur .eyebrow{color:var(--terra)}
+  .cur .sec-head p{color:var(--on-navy-soft)}
+  .years{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+  @media (max-width:760px){.years{grid-template-columns:1fr 1fr}}
+  .yr{border-top:3px solid rgba(243,238,228,.25);padding-top:14px;min-height:150px}
+  .yr.hot{border-top-color:var(--terra)}
+  .yr .y{font-family:var(--latin);font-weight:700;font-size:12px;letter-spacing:.16em;color:var(--on-navy-soft)}
+  .yr.hot .y{color:var(--terra)}
+  .yr ul{list-style:none;padding:0;margin:10px 0 0;font-size:14px;line-height:1.7}
+  .yr.hot ul li{font-weight:700}
+  .yr .flag{display:inline-block;margin-top:10px;font-size:12px;font-weight:700;color:var(--terra);letter-spacing:.06em}
+  .cur .note{margin-top:34px;color:var(--on-navy-soft);font-size:14px;max-width:44em}
+
+
+  /* method */
+  .method{background:var(--cream)}
+  .method-steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  @media (max-width:820px){.method-steps{grid-template-columns:1fr}}
+  .mstep{border-top:3px solid var(--navy);padding-top:18px}
+  .mstep:first-child{border-top-color:var(--terra)}
+  .mstep-lang{display:inline-block;font-family:var(--latin);font-weight:700;font-size:11px;letter-spacing:.18em;padding:4px 8px;border:1px solid var(--navy);color:var(--navy);border-radius:2px}
+  .mstep:first-child .mstep-lang{border-color:var(--terra);color:var(--terra)}
+  .mstep h3{font-size:19px;margin-top:14px}
+  .mstep p{margin-top:10px;font-size:15px;color:var(--ink-soft)}
+  .method-note{margin-top:40px;padding:22px 26px;background:var(--navy);color:var(--on-navy-soft);font-size:15px;max-width:none}
+
+  /* consult */
+  .consult{background:var(--cream-2)}
+  .consult-card{background:var(--cream);border:1px solid var(--mist);padding:36px;display:grid;grid-template-columns:1.1fr .9fr;gap:40px}
+  @media (max-width:820px){.consult-card{grid-template-columns:1fr;padding:26px}}
+  .consult h3{font-size:22px;font-weight:700}
+  .kv{margin:22px 0 0;padding:0;list-style:none;display:grid;gap:12px}
+  .kv li{display:grid;grid-template-columns:96px 1fr;gap:14px;font-size:15px;border-top:1px solid var(--mist);padding-top:12px}
+  .kv li b{font-family:var(--latin);font-weight:700;font-size:12px;letter-spacing:.14em;color:var(--terra);padding-top:4px;text-transform:uppercase}
+  .steps{list-style:none;margin:0;padding:0;display:grid;gap:18px;counter-reset:s}
+  .steps li{position:relative;padding-left:44px;font-size:15px}
+  .steps li::before{counter-increment:s;content:counter(s);position:absolute;left:0;top:2px;width:28px;height:28px;border-radius:50%;background:var(--navy);color:var(--on-navy);font-family:var(--latin);font-weight:700;font-size:13px;display:flex;align-items:center;justify-content:center}
+  .steps li b{display:block;font-weight:700}
+  .consult .cta{margin-top:28px;display:flex;flex-wrap:wrap;gap:12px;align-items:center}
+  .consult .fine{font-size:12px;color:var(--ink-soft)}
+
+  /* trial + service */
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+  @media (max-width:820px){.cards{grid-template-columns:1fr}}
+  .card{border:1px solid var(--mist);padding:30px;background:var(--cream)}
+  .card .tag{display:inline-block;font-family:var(--latin);font-weight:700;font-size:11px;letter-spacing:.18em;text-transform:uppercase;padding:5px 9px;border:1px solid var(--terra);color:var(--terra);border-radius:2px}
+  .card .tag.soon{border-color:var(--ink-soft);color:var(--ink-soft)}
+  .card h3{font-size:22px;margin-top:16px}
+  .card p{margin-top:12px;color:var(--ink-soft);font-size:15px}
+  .card ul{margin:14px 0 0;padding-left:1.2em;font-size:15px;color:var(--ink)}
+  .card .cta{margin-top:22px}
+
+  /* about */
+  .about .cols{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-top:8px}
+  @media (max-width:820px){.about .cols{grid-template-columns:1fr}}
+  .list-box{border-top:3px solid var(--navy);padding-top:18px}
+  .list-box.no{border-top-color:var(--terra)}
+  .list-box h3{font-size:18px}
+  .list-box ul{margin:12px 0 0;padding-left:1.2em;font-size:15px;line-height:1.85}
+  .anon{margin-top:44px;padding:26px 30px;background:var(--navy);color:var(--on-navy);max-width:none}
+  .anon p{color:var(--on-navy-soft);font-size:15px}
+  .anon b{color:var(--on-navy)}
+
+  /* faq */
+  .faq details{border-top:1px solid var(--mist)}
+  .faq details:last-child{border-bottom:1px solid var(--mist)}
+  .faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-weight:700;font-family:var(--display);font-size:17px;position:relative}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-family:var(--latin);font-size:24px;color:var(--terra);font-weight:500}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{padding:0 0 22px;color:var(--ink-soft);max-width:44em;font-size:15px}
+
+  /* footer */
+  footer{background:var(--navy);color:var(--on-navy-soft);padding:48px 0 40px;font-size:13px}
+  footer .wrap{display:grid;grid-template-columns:1fr auto;gap:24px;align-items:start}
+  @media (max-width:640px){footer .wrap{grid-template-columns:1fr}}
+  footer .mark b{color:var(--on-navy)}
+  footer .links{display:flex;gap:18px;margin-top:14px}
+  footer .links a{text-decoration:none;color:var(--on-navy)}
+  footer .disc{margin-top:18px;max-width:52em;line-height:1.8}
+</style>
+</head>
+<body>
+
+
+<nav class="nav" aria-label="サイト内">
+  <div class="wrap">
+    <a class="mark" href="#top" aria-label="MEDCEND トップへ">
+      <svg viewBox="0 0 100 100" aria-hidden="true"><polyline points="18,84 18,30 50,62 82,30 82,84" fill="none" stroke="#F3EEE4" stroke-width="13" stroke-linejoin="miter"/><rect x="75.5" y="10" width="13" height="10" fill="#D9744F"/></svg>
+      <b>MEDCEND</b>
+    </a>
+    <div class="nav-links">
+      <a href="#problem">入った後の実態</a>
+      <a href="#method">教え方</a>
+      <a href="#consult">無料相談</a>
+      <a href="#trial">体験授業</a>
+      <a href="#about">運営について</a>
+      <a href="#faq">FAQ</a>
+    </div>
+    <a class="btn btn-terra btn-sm form-link" href="#consult">無料相談に申し込む</a>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Support for Japanese medical students abroad</div>
+        <h1><span>入学させる会社ではなく、</span><br><span>卒業させる会社。</span></h1>
+        <p class="lead">MEDCENDは、海外の英語医学部にいる日本人の「入った後」を支えるチームです。運営は東欧・イタリアの英語医学部に在籍する日本人学生。落ちやすい科目を、日本語で分かって、英語で言えるところまで教えます。</p>
+        <div class="cta">
+          <a class="btn btn-terra form-link" href="#consult">無料の進級相談に申し込む</a>
+          <a class="btn btn-ghost-light" href="#problem">入った後に何が起きるか</a>
+        </div>
+      </div>
+      <svg class="stair" viewBox="0 0 360 300" aria-hidden="true">
+        <polyline points="0,300 60,300 60,250 120,250 120,200 180,200 180,150 240,150 240,100 300,100 300,50 360,50" fill="none" stroke="#F3EEE4" stroke-width="3" opacity=".9"/>
+        <rect x="300" y="8" width="60" height="14" fill="#D9744F"/>
+      </svg>
+    </div>
+    <div class="stats">
+      <div class="stat">
+        <div class="v">48<small>%</small></div>
+        <div class="l">2年次・解剖学の進級率</div>
+        <div class="s">東欧のある医学部、2018年度。解剖＋組織＋発生をまとめた科目。在学生の記録より</div>
+      </div>
+      <div class="stat">
+        <div class="v">54.8<small>%</small></div>
+        <div class="l">海外医学部卒の医師国家試験 合格率</div>
+        <div class="s">第120回（2026年）、受験343人。国内新卒は94.7%。厚生労働省</div>
+      </div>
+      <div class="stat">
+        <div class="v">300–500<small>万円</small></div>
+        <div class="l">留年1年の追加費用</div>
+        <div class="s">学費＋生活費の概算。ハンガリー、2026年、在学生の記録より</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section id="problem">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">The problem</div>
+      <h2>「入った後」のことは、誰も教えてくれない。</h2>
+    </div>
+    <div class="two">
+      <div class="prose">
+        <p>「海外医学部」で検索すると出てくるのは、入学のしやすさ、学費、メリット、合格体験談。ほとんどが斡旋業者のサイトで、送客が目的なので、入学後の困難は書かれません。</p>
+        <p>そして「海外の医学部に進んだ日本人が何人いて、何人が卒業したか」を数えた公的統計は、存在しません。文部科学省もJASSOも、高校卒業後に直接海外の大学へ進んだ人は調査の対象外。外務省の統計は国別の総数だけです。</p>
+        <p>誰も数えていないこと自体が、この問題が放置されている証拠だと、私たちは考えています。</p>
+      </div>
+      <div class="prose">
+        <p>入学前は、業者が丁寧に面倒を見てくれます。書類、ビザ、住居、送迎。ここは本当にやってくれます。</p>
+        <p>問題は入学後です。運営メンバーの同期は、「英語の授業についていけない」と相談して、業者の個別指導に数十万円を払いました。手配されたのは日本語を話せない外国人講師で、授業はすべて英語。英語で分からない学生に英語で教えても、分かるようにはなりません。口頭試問のある科目をほとんど全部落として、留年しました。</p>
+        <p>費用が入学前に完結する仕組みでは、入学後に手をかける理由が生まれない。業者の悪意ではなく、構造の話です。</p>
+        <p>「入学前」は業者が、「日本の医学部の進級」は予備校が、それぞれ大量に情報を出しているのに、「海外医学部の入学後」だけが空白のままです。だから学生は毎年、同じ場所で落ち続けています。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cur">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Where students fail</div>
+      <h2>落ちやすい科目は、最初から決まっている。</h2>
+      <p>すべて基礎医学で、すべて2年次まで。対策すべき科目は5つしかありません。落ちる理由は英語力ではなく、日本の高校を出た学生が一度も経験したことのない「口頭試問」という試験形式です。</p>
+    </div>
+    <div class="years">
+      <div class="yr hot"><div class="y">YEAR 1</div><ul><li>解剖学 I</li><li>発生学</li><li>生化学</li><li>生理学 I</li></ul><span class="flag">▲ 落ちやすい科目は1年目から始まる</span></div>
+      <div class="yr hot"><div class="y">YEAR 2</div><ul><li>解剖学 II</li><li>組織学</li><li>生理学 II</li></ul><span class="flag">▲ ここで過半数が止まる</span></div>
+      <div class="yr"><div class="y">YEAR 3</div><ul><li>病理学</li><li>薬理学</li><li>微生物学</li></ul></div>
+      <div class="yr"><div class="y">YEAR 4–6</div><ul><li>臨床科目</li><li>病院実習</li></ul></div>
+    </div>
+    <p class="note">科目の配置は大学により異なります（一般的な構成）。1年目から解剖・発生・生化学・生理学が始まり、2年目は解剖・組織・生理が中心。再試験は回数に上限があり、途中から有料になる大学もあります。ここを越えれば、3年以降の脱落は大きく減ります。MEDCENDが教えるのは、この5科目と、口頭試問の「話し方」です。</p>
+  </div>
+</section>
+
+<section class="method" id="method">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">How we teach</div>
+      <h2>日本語で分かって、英語で言える。</h2>
+      <p>「理解する」と「英語で話す」は、別の仕事です。同時に英語だけでやろうとするから、両方が中途半端になる。MEDCENDはこの2つを分けて、それぞれ一番効率のいい言語でやります。</p>
+    </div>
+    <div class="method-steps">
+      <div class="mstep">
+        <div class="mstep-lang">日本語</div>
+        <h3>「なぜそうなるか」を組み立てる</h3>
+        <p>理解は母語が圧倒的に速い。教科書を英語で読み直すのではなく、日本語で構造と理由を先に作ります。ここで「知っている」から「分かっている」に変わります。</p>
+      </div>
+      <div class="mstep">
+        <div class="mstep-lang">英語</div>
+        <h3>「話す型」に載せ直す</h3>
+        <p>定義 → 位置 → 構成 → 関係 → 臨床。口頭試問で通る順番に、英語で組み直します。用語は英語のまま、骨組みは日本語で作ったものを使います。</p>
+      </div>
+      <div class="mstep">
+        <div class="mstep-lang">英語</div>
+        <h3>試験官役を相手に練習する</h3>
+        <p>追加質問、知らない問いへの推論、黙らないこと。本番と同じ形式で、英語で回します。ここまでやって初めて、本番で口が動きます。</p>
+      </div>
+    </div>
+    <p class="method-note">英語で分からない学生に英語で教えても、分かるようにはなりません。かといって日本語だけでは、本番で口が動きません。日本語と英語の両方で、同じ試験を通ってきた人が横にいる必要があります。それが、私たちがやることです。</p>
+  </div>
+</section>
+
+<section class="consult" id="consult">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Free consultation</div>
+      <h2>無料の進級相談（30分・1対1・オンライン）</h2>
+      <p>いまの状況を整理して、次の試験までにやることを一緒に決めます。同じ試験を通ってきた学生が聞きます。MEDCENDの授業が合いそうな方には、その場でご案内します。</p>
+    </div>
+    <div class="consult-card">
+      <div>
+        <h3>こんな人に</h3>
+        <ul class="kv">
+          <li><b>Student</b><span>いま科目を落としていて、次どうするか決めかねている。試験期が来るのが怖い。留年が決まった。</span></li>
+          <li><b>Parent</b><span>お子さんの状況が分からない。「6年間サポート」の中身を契約前に確認したい。</span></li>
+          <li><b>Before</b><span>海外医学部への進学を検討していて、入学後に何が起きるかを当事者から聞きたい。</span></li>
+        </ul>
+        <div class="cta">
+          <a class="btn btn-terra form-link" href="#consult">申込フォームへ</a>
+          <span class="fine">Googleフォームが開きます。3分で終わります。</span>
+        </div>
+      </div>
+      <div>
+        <h3>流れ</h3>
+        <ol class="steps" style="margin-top:22px">
+          <li><b>フォームで申込</b>お名前（ニックネーム可）、在籍国・学年、いまの状況を書いてください。大学名は不要です。</li>
+          <li><b>日程を調整</b>2〜3日以内にメールでご連絡します。平日夜・週末も対応します（日本時間・現地時間どちらでも）。</li>
+          <li><b>30分、話す</b>Zoom / Google Meet。再試験の残り回数、次の試験日までの日数、落ちた科目の形式を一緒に整理します。</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="trial">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">Coming up</div>
+      <h2>体験授業と、11月からの授業。</h2>
+    </div>
+    <div class="cards">
+      <div class="card">
+        <span class="tag">10月・無料・実施予定</span>
+        <h3>体験授業「心電図は暗記ゼロで読める」</h3>
+        <p>90分・オンライン。心電図は波形を暗記する科目ではありません。電気が心臓のどこを、どちらに向かって流れているかが分かれば、見たことのない波形も読めます。生理学の授業のやり方を、そのまま体験してください。</p>
+        <ul><li>対象：東欧・イタリアの英語医学部にいる日本人学生。保護者の方の参加も歓迎します（授業の進め方をそのまま見ていただけます）</li><li>言語：日本語で解説、用語は英語</li><li>日程：10月中旬を予定。決まり次第、X と note でお知らせします</li></ul>
+        <div class="cta"><a class="btn btn-ghost-dark form-link" href="#consult">事前登録する（相談会と同じフォーム）</a></div>
+      </div>
+      <div class="card">
+        <span class="tag soon">11月開講予定</span>
+        <h3>落ちやすい科目を、口頭試問の形式ごと教える授業</h3>
+        <p>解剖・組織・発生・生化学・生理学。どの大学にもある内容は集団授業で進度を揃え、大学ごとの口頭試問の対策と理解の底上げは個別指導で行います。教えるのは、運営メンバーが自分で通ってきた科目だけです。</p>
+        <ul><li>集団授業：英語で医学を理解するための基礎医学（USMLEにもそのまま使える内容）</li><li>個別指導：試験官役を置いた口頭試問の練習、落とした科目の立て直し</li><li>料金・時間割：準備中。相談会でご案内します</li></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">About</div>
+      <h2>私たちがやること。</h2>
+      <p>MEDCENDは斡旋業者ではありません。入学の手続きはしません。やるのは「入った後」だけです。</p>
+    </div>
+    <div class="cols">
+      <div class="list-box">
+        <h3>教える</h3>
+        <ul>
+          <li>落ちやすい科目（解剖・組織・発生・生化学・生理学）を、口頭試問の形式まで含めて教える</li>
+          <li>理解は日本語で、本番は英語で。日本語で「なぜ」を組み立ててから、英語で話せる形に載せ直す</li>
+          <li>教えるのは、運営メンバーが自分で通ってきた科目だけ</li>
+        </ul>
+      </div>
+      <div class="list-box">
+        <h3>伝える</h3>
+        <ul>
+          <li>無料の進級相談（30分・1対1）と、無料の体験授業</li>
+          <li>note と X で、「入った後」の情報を出典つきで出し続ける</li>
+        </ul>
+      </div>
+    </div>
+    <div class="anon">
+      <p><b>運営メンバーの名前と大学は出していません。</b>現地の日本人コミュニティは非常に小さく、個人が特定されるためです。運営は東欧・イタリアの英語医学部に在籍する日本人学生で、全員が口頭試問のある科目を自分で通ってきました。有料のサービスを始める段階では、特定商取引法に基づく運営者情報を開示します。</p>
+    </div>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">FAQ</div>
+      <h2>よくある質問</h2>
+    </div>
+    <details>
+      <summary>相談会は無料ですか。授業の勧誘はありますか。</summary>
+      <p>相談会は無料です。前半で状況（再試験の残り回数、次の試験日、落ちた科目の形式）を整理し、次の試験までにやることを決めます。そのうえで、MEDCENDの授業が役に立ちそうな場合は、内容と料金をご案内します。合わないと判断した場合は、そう伝えます。その場で申し込む必要はありません。</p>
+    </details>
+    <details>
+      <summary>どこの国・大学の学生が対象ですか。</summary>
+      <p>東欧（ハンガリー・チェコ・ルーマニアなど）とイタリアの英語課程にいる日本人学生が中心です。口頭試問のある基礎医学の科目なら、大学が違っても対策の型は共通です。大学ごとの規程（再試験の回数、進級要件）は、相談のときに一緒に確認します。</p>
+    </details>
+    <details>
+      <summary>英語が苦手なのですが、それが原因で落ちているのでは。</summary>
+      <p>運営メンバーの大学でも、英語ネイティブの学生が普通に落ちています。落ちる理由は英語力ではなく、口頭試問という形式に対する「構成して話す」訓練の有無です。これは練習で身につきます。</p>
+    </details>
+    <details>
+      <summary>保護者だけで相談してもいいですか。</summary>
+      <p>はい。お子さんの同意がなくても、制度や費用の一般的な説明はできます。お子さん本人の状況に踏み込む場合は、本人の参加をお願いすることがあります。</p>
+    </details>
+    <details>
+      <summary>進級は保証されますか。</summary>
+      <p>保証しません。試験官によって合否の基準が違うのが口頭試問の実態で、保証できると言う人がいれば、その根拠を聞いてください。私たちがやるのは、どの試験官に当たっても減点されにくい話し方と、落ちやすい科目の理解を作ることです。</p>
+    </details>
+    <details>
+      <summary>入学の斡旋や、大学の紹介はしていますか。</summary>
+      <p>していません。MEDCENDは「入った後」だけを扱います。進学を検討中の方には、入学後に何が起きるかを当事者として説明することはできます。</p>
+    </details>
+    <details>
+      <summary>運営メンバーの名前や大学を、なぜ出さないのですか。</summary>
+      <p>現地の日本人コミュニティが非常に小さく、大学名と学年を出すだけで個人が特定されるためです。有料サービスの提供時には、法律に従って運営者情報を開示します。</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <a class="mark" href="#top" aria-label="MEDCEND">
+        <svg viewBox="0 0 100 100" aria-hidden="true"><polyline points="18,84 18,30 50,62 82,30 82,84" fill="none" stroke="#F3EEE4" stroke-width="13" stroke-linejoin="miter"/><rect x="75.5" y="10" width="13" height="10" fill="#D9744F"/></svg>
+        <b>MEDCEND</b>
+      </a>
+      <div class="links">
+        <a href="https://note.com/" class="note-link">note</a>
+        <a href="https://x.com/" class="x-link">X（@medcend）</a>
+        <a href="mailto:hello@example.com" class="mail-link">メール</a>
+      </div>
+      <p class="disc">MEDCENDは海外医学部の在学生が運営する教育チームで、留学斡旋業者ではありません。本サイトの数字は公開情報を出典つきで引用し、推計は推計と明記しています。特定の大学・業者・教員を批判する意図はありません。進級・合格を保証するものではなく、日本の医師国家試験の受験資格は厚生労働省が個人単位で審査します。</p>
+    </div>
+    <div>© 2026 MEDCEND</div>
+  </div>
+</footer>
+
+<script>
+  // ▼ 公開前に差し替える3つ
+  const FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLSc95X303yRpBEhc627t221mSBZm7iB6NEHqc1IKTA-ngXQD3w/viewform"; // Googleフォームの共有URL
+  const NOTE_URL = "https://note.com/medcend"; // note のプロフィールURL
+  const X_URL    = "https://x.com/medcend";  // X のプロフィールURL
+  const MAIL     = "medcend@outlook.jp";     // 連絡用メールアドレス
+
+  if (FORM_URL) document.querySelectorAll(".form-link").forEach(a => { a.href = FORM_URL; a.target = "_blank"; a.rel = "noopener"; });
+  document.querySelectorAll(".note-link").forEach(a => a.href = NOTE_URL);
+  document.querySelectorAll(".x-link").forEach(a => a.href = X_URL);
+  if (MAIL) document.querySelectorAll(".mail-link").forEach(a => a.href = "mailto:" + MAIL); else document.querySelectorAll(".mail-link").forEach(a => a.remove());
+</script>
+
+</body>
+</html>
