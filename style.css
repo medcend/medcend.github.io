@@ -221,7 +221,7 @@ footer .legal a{color:var(--on-navy-soft)}
 
 /* price blocks */
 .slots{background:var(--terra);color:#fff;padding:16px 22px;border-radius:4px;font-size:15px;margin-bottom:48px}
-.slots b{margin-right:8px;font-size:16px}
+.slots b{display:block;margin-top:8px;font-size:18px}
 .price-block+.price-block{margin-top:44px}
 .price-block h3{font-size:22px;display:flex;flex-wrap:wrap;align-items:center;gap:12px}
 .promo{font-family:var(--body);font-size:12px;font-weight:700;letter-spacing:.04em;padding:5px 10px;border-radius:2px;background:var(--terra);color:#fff}
