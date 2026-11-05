@@ -152,9 +152,14 @@ footer .links{display:flex;gap:18px;margin-top:14px}
 footer .links a{text-decoration:none;color:var(--on-navy)}
 footer .disc{margin-top:18px;max-width:52em;line-height:1.8}
 
-/* LINE button */
-.btn-line{background:#06C755;color:#fff}
-.btn-line:hover{background:#05A847}
+/* contact button: LINEモードは緑、フォームモードはテラコッタ（site.js が html に mode-line / mode-form を付ける） */
+.btn-contact{background:var(--terra);color:#fff}
+.btn-contact:hover{background:var(--terra-deep)}
+.mode-line .btn-contact{background:#06C755}
+.mode-line .btn-contact:hover{background:#05A847}
+.if-line{display:none}
+.mode-line .if-line{display:inline}
+.mode-line .if-form{display:none}
 
 /* price */
 .price{background:var(--cream)}

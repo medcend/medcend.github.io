@@ -1,6 +1,6 @@
 # MEDCEND 公式サイト
 
-ヨーロッパの英語医学部に通う日本人学生と、その親のための進級支援チーム MEDCEND の公式サイト。GitHub Pages（medcend.github.io）で公開している。
+ヨーロッパの英語医学部に通う日本人学生と、その親のための進級支援チーム MEDCEND の公式サイト。GitHub Pages で公開し、独自ドメイン https://medcend.com で配信している（`CNAME` ファイル）。DNS は Cloudflare で管理（A レコード4つ＋www の CNAME、すべて DNS only）。
 
 ## 作業の始め方と終わり方
 
@@ -17,7 +17,7 @@
 ## デザイン
 
 - ブランドカラーは紺・クリーム・テラコッタ。値は `style.css` の `:root` にある（`--navy` / `--cream` / `--terra`）。
-- LINE ボタンだけは LINE の緑（`.btn-line`）を使う。
+- 問い合わせボタン（`.btn-contact`）は、LINE モードのときだけ LINE の緑になる。
 
 ## ファイル構成
 
@@ -26,14 +26,14 @@
 - `tokushoho.html`：特定商取引法に基づく表記
 - `privacy.html`：プライバシーポリシー
 - `style.css`：全ページ共通のスタイル
-- `site.js`：LINE・note・X のURL。リンク先はここだけで差し替える
+- `site.js`：LINE・Googleフォーム・note・X のURL。リンク先はここだけで差し替える
 - `og.png`：SNS 共有用の画像
 
 ## 仮置きしているもの
 
-- LINE の URL：`site.js` の `LINE_URL`（いまは `[LINEのURL]`）。仮置きのあいだ、LINE ボタンはページ内の相談欄に飛ぶ。
+- LINE の URL：`site.js` の `LINE_URL`（いまは `[LINEのURL]`）。仮置きのあいだは「フォームモード」で、問い合わせボタンは Google フォーム（`FORM_URL`）に飛び、文言もフォーム用になる。`LINE_URL` を https の URL にすると LINE モードに切り替わる。
+- 問い合わせの文言は、HTML に `<span class="if-line">…</span><span class="if-form">…</span>` の両方を書いて出し分ける。新しく問い合わせの文言を足すときも両方書く。
 - 特商法・プライバシーポリシーの未定項目：`<span class="tbd">［未定］</span>` で示している。
-- 独自ドメイン：未定。決まったら `CNAME` を追加し、各ページの `og:url` と `og:image` を書き換える。
 
 ## 公開の手順
 
