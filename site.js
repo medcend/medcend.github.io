@@ -7,8 +7,8 @@ const X_URL    = "https://x.com/medcend";    // X のプロフィールURL
 // noteの各巻のURL。https のURLを入れた巻からボタンが有効になる。
 // どれか1つでも入ると、トップの「解剖テキスト」欄が表示される（それまでは非表示）
 const NOTE_ITEMS = {
-  vol0: "[0巻のURL]",
-  vol1: "[1巻のURL]",
+  vol0: "https://note.com/medcend/n/n935b1bdf2459",
+  vol1: "https://note.com/medcend/n/nd323681b0ec4",
 };
 
 // LINE_URL が https で始まればLINEモード、仮置きのあいだはフォームモード。

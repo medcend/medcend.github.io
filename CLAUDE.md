@@ -35,7 +35,7 @@
 
 - LINE の URL：`site.js` の `LINE_URL`（いまは `[LINEのURL]`）。仮置きのあいだは「フォームモード」で、問い合わせボタンは Google フォーム（`FORM_URL`）に飛び、文言もフォーム用になる。`LINE_URL` を https の URL にすると LINE モードに切り替わる。
 - 問い合わせの文言は、HTML に `<span class="if-line">…</span><span class="if-form">…</span>` の両方を書いて出し分ける。新しく問い合わせの文言を足すときも両方書く。
-- note の販売欄（トップの `#note`）：各巻のURLは `site.js` の `NOTE_ITEMS`（いまは `[0巻のURL]` `[1巻のURL]`）。どれか1つが https のURLになるまで、欄とナビの「解剖テキスト」は非表示。URLのない巻のボタンは「準備中」になる。`?note-preview` を付けて開くと、URLがなくても欄を表示して確認できる。表紙画像は `img/note-vol0.jpg` `img/note-vol1.jpg`
+- note の販売欄（トップの `#note`）：各巻のURLは `site.js` の `NOTE_ITEMS`（0巻・1巻は2026-11-06に設定済み。2巻以降を出すときは `NOTE_ITEMS` と HTML のカードを足す）。どの巻にも https のURLがないときは、欄とナビの「解剖テキスト」は非表示。URLのない巻のボタンは「準備中」になる。`?note-preview` を付けて開くと、URLがなくても欄を表示して確認できる。表紙画像は `img/note-vol0.jpg` `img/note-vol1.jpg`
 - 特商法・プライバシーポリシーの未定項目：`<span class="tbd">［未定］</span>` で示している。
 
 ## 公開の手順
