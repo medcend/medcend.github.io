@@ -313,3 +313,4 @@ footer .legal a{color:var(--on-navy-soft)}
 @media (max-width:420px){.nav-right .btn-sm{padding:10px 12px}}
 .nav .wrap{max-width:1240px}
 @media (max-width:1220px){.nav-links{display:none}}
+.promo.soon{background:var(--navy)}
